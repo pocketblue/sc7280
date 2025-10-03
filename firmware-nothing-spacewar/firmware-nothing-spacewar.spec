@@ -25,5 +25,4 @@ find . -type f -exec install -Dm644 {} %{buildroot}/{} ';'
 /usr/share/qcom
 
 %changelog
-* Thu Oct 2 2025 gmanka
-- init
+%autochangelog

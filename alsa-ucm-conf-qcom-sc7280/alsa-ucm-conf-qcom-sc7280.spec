@@ -22,6 +22,4 @@ cp -r ucm2 %{buildroot}/usr/share/alsa
 /usr/share/alsa
 
 %changelog
-* Thu Oct 2 2025 gmanka
-- init
-
+%autochangelog

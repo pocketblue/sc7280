@@ -54,5 +54,4 @@ dracut /usr/lib/modules/%{uname_r}/initramfs.img %{uname_r}
 kernel-install add %{uname_r} /usr/lib/modules/%{uname_r}/vmlinuz /usr/lib/modules/%{uname_r}/initramfs.img
 
 %changelog
-* Thu Oct 2 2025 gmanka
-- init
+%autochangelog
