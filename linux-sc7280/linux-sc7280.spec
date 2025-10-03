@@ -26,12 +26,11 @@ mainline kernel for %{soc}
 
 %prep
 %autosetup -n linux-%{version}-%{soc}
-#TODO:
-make defconfig %{soc}.config
+make defconfig
 
 %build
 sed -i '/^CONFIG_LOCALVERSION=/d' .config
-cat %{SOURCE1} >> .config
+scripts/kconfig/merge_config.sh -m .config %{SOURCE1}
 make olddefconfig
 make EXTRAVERSION="-%{release}.%{_target_cpu}" LOCALVERSION= -j%{?_smp_build_ncpus} Image modules dtbs
 
