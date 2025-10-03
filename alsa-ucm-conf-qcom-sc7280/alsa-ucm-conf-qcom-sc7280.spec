@@ -7,19 +7,20 @@ Summary:        ALSA UCM configuration for %{soc} devices
 License:        BSD-3-Clause
 URL:            https://github.com/%{soc}-mainline/alsa-ucm-conf
 Source0:        %{url}/archive/%{commit}.tar.gz
+BuildArch:      noarch
 
 %description
 ALSA UCM configuration for %{soc} devices
 
 %prep
-%autosetup -n %{commit}
+%autosetup -n alsa-ucm-conf-%{commit}
 
 %install
 mkdir -p   %{buildroot}/usr/share/alsa
 cp -r ucm2 %{buildroot}/usr/share/alsa
 
 %files
-/usr/share/alsa
+/usr/share/alsa/ucm2
 
 %changelog
 %autochangelog
