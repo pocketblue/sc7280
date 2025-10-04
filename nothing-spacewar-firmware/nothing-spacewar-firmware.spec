@@ -16,7 +16,7 @@ License:              Unknown
 %{summary}
 
 %prep
-%autosetup -n %{name}-%{commit}
+%autosetup -n firmware-nothing-spacewar-%{commit}
 
 %install
 find . -type f -exec install -Dm644 {} %{buildroot}/{} ';'
