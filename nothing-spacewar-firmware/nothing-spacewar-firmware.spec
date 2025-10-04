@@ -1,6 +1,6 @@
 %global debug_package %{nil}
 %global commit        428184b45f1294a0e66979f570902de84883e1fc
-Name:                 firmware-nothing-spacewar
+Name:                 nothing-spacewar-firmware
 Version:              1
 Release:              0%{?dist}
 Summary:              firmware for nothing phone 1
@@ -12,7 +12,7 @@ Requires:             qcom-firmware
 AutoReqProv:          no
 
 %description
-firmware for nothing phone 1
+%{summary}
 
 %prep
 %autosetup -n %{name}-%{commit}
