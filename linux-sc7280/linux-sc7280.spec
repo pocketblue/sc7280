@@ -1,13 +1,14 @@
 %undefine      _debugsource_packages
 %global soc    sc7280
+%global branch spacewar-6.17
 Version:       6.17.0
-Release:       0.%{soc}%{?dist}
+Release:       1.%{soc}%{?dist}
 ExclusiveArch: aarch64
 Name:          kernel
 Summary:       mainline kernel for %{soc}
 License:       GPLv2
-URL:           https://github.com/%{soc}-mainline/linux
-Source0:       %{url}/archive/refs/tags/v%{version}-%{soc}.tar.gz
+URL:           https://github.com/mainlining/linux
+Source0:       %{url}/archive/refs/heads/danila/%{branch}.tar.gz
 Source1:       extra-%{soc}.config
 
 Provides:      kernel               = %{version}-%{release}
@@ -25,8 +26,8 @@ BuildRequires:   bc bison dwarves diffutils elfutils-devel findutils gcc gcc-c++
 mainline kernel for %{soc}
 
 %prep
-%autosetup -n linux-%{version}-%{soc}
-make defconfig
+%autosetup -n linux-%{branch}
+make defconfig %{soc}.config
 
 %build
 sed -i '/^CONFIG_LOCALVERSION=/d' .config
