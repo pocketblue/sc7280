@@ -26,7 +26,7 @@ BuildRequires:   bc bison dwarves diffutils elfutils-devel findutils gcc gcc-c++
 mainline kernel for %{soc}
 
 %prep
-%autosetup -n linux-%{branch}
+%autosetup -n linux-danila-%{branch}
 make defconfig %{soc}.config
 
 %build
